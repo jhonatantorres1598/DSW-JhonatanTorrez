@@ -1,1 +1,20 @@
 
+.img{
+	width: 10%;
+	height: 10%;
+
+}
+button{
+	background-color: red;
+
+}
+a{	color: #fff;
+}
+.caja{
+  background: #5DEAA8;
+  height: 300px;
+  width: 400px;
+  border: 10px solid #3EC483;
+  padding: 10px;
+  margin: 10px;
+}
