@@ -75,7 +75,7 @@
 			</div>
 			<div class="main-container">
 				<div class="card">
-					<h1>CSS INTERNO</h1>
+					<h1>CSS EXTERNO</h1>
 					<br>
 					<P>Una vez creada la estructura del documento y definidos sus contenidos a nivel semántico con HTML, podemos darle una apariencia y presentación personalizada mediante la utilización de CSS (Hojas de Estilo en Cascada / 'Cascade Style Sheets' ).</P>
 					<br>
@@ -94,61 +94,68 @@
 					<p>Las Hojas de Estilo (o Estilos) se pueden incluir de 3 formas diferentes:</p>
 					<br>
 					<ol>
-						<li><strong>Estilo en línea (inline):</strong> definido dentro de las propias etiquetas HTML</li>
-						<li><strong>Hoja de estilo interna: </strong>en la sección <code>&lt;head&gt;.</code> del mismo documento HTML</li>
+						<li><strong>Hoja de estilo externa: </strong>en un archivo diferente al documento HTMLL</li>
+
 					</ol>
 					<br>
 					<p>¿Por qué se denominan hojas de estilos <strong>'en cascada'</strong>? Pues porque estas tres formas de incluir estilos no son excluyentes y pueden combinarse (por ejemplo utilizando una hoja de estilos externa general e incluyendo estilos en línea en algunas etiquetas del documento). En caso de conflicto, prevalece el estilo más 'interno'.</p>
 				</div>
 				<div class="card">
-					<h1>Estilo en línea</h1>
-					<br>
-					<p>La forma genérica de incluir un estilo en línea (inline) sería:</p>
-					<br>
-					<P><pre class="cdv"><code><span class="ln"><span class="num" data-num="1."></span><span class="ln1"><span class="tag">&lt;nombre_etiqueta&gt;< style="PROPIEDAD1 : VALOR ; PROPIEDAD2 : VALOR ;....."></span></span></span>
-						</code></pre>
-						</P>
-					<br>
-					<p>Lo vemos con un ejemplo:</p>
-					<br>
-					<p><pre class="cdv"><code><span class="ln"><span class="num" data-num="1."></span><span class="ln1"><span class="tag">&lt;p&gt;< style=”color: green; font-family: impact;”>Texto con tipografía Impact verde</span></span></span>
-						</code></pre>
-					</p>
-					<br>
-					<p>cómo se visualizaría en nuestro navegador:</p>
-					<br>
-					<p class="text">Texto con tipografía Impact verde</p>
-					<br>
-					<p>En el ejemplo de arriba, incluimos en una etiqueta párrafo <code>&lt;p&gt;</code>, el atributo 'style', cuyo valor son dos características de estilo de la fuente a mostrar: color verde y tipografía Impact.</p>
-
-				</div>
-				<div class="card">
-					<h1>Hoja de estilo interna</h1>
+					<h1>Hoja de estilos externa</h1>
 					<br>
 					<p>Vemos una hoja interna en una página HTML:</p>
 					<br>
-					<p><img src="img/hoja_interno.png" alt=""></p>
+					<p><img src="img/externo.png" alt=""></p>
 					<br>
-					<p>¿Qué podemos observar en ese ejemplo?:</p>
+					<p>En este ejemplo vemos que se ha incluido en la sección HEAD de la página web una etiqueta <code>&lt;link&gt;</code>con los atributos:</p>
 					<br>
 					<ol>
-						<li>Incluimos las reglas de estilo entre las etiquetas <code>&lt;style&gt;</code>....<code>&lt;/style&gt;</code> (ya no es obligatorio el atributo 'type', aunque es válido y muy usado: <code>&lt;style&gt;</code> type=”text/css”)</li>
-						<li>Elegimos el elemento (selector) al que queremos dar un determinado estilo de presentación (en este caso los párrafos 'p') e incluimos entre llaves “{ }” las características (declaraciones) que vamos a aplicarle, separadas cada una por ';'.</li>
-						<li>Se suele separar cada declaración de estilo en una linea para mayor claridad, pero no es obligatorio.</li>
-						<li>Podemos agrupar varios selectores que compartan el mismo (sub)conjunto de estilos. Por ejemplo: p,ul {........} (se aplicarán los mismos estilos definidos entre las llaves a los párrafos (p) y a las listas (ul). Por supuesto se pueden definir otros estilos diferentes adicionales a 'p' y 'ul' en esa misma hoja.</li>
-						<li>Según vemos en la imagen de abajo, cada declaración se compone de una propiedad, en este caso: font-size (tamaño de letra) y un valor, en este caso: large (grande). La regla de estilo sería el conjunto del selector y la declaración</li>
+						<li><strong>rel:</strong> es el tipo de relación. En este caso el valor es “stylesheet” (hoja de estilo)</li>
+						<li><strong>href:</strong> la dirección URL donde se encuentra la hoja. Es igual que cuando ponemos un enlace con la etiqueta <a>. En este caso es una dirección relativa, y el fichero se encuentra en el directorio "css" y se llama "HojaEstilo1.css" (También valdría una dirección absoluta tipo: http://www.web.com/css/HojaEstilo1.css")</li>
+						<li><strong>type:</strong> tipo de archivo que enlazamos. En este caso el valor 'text/css' indica que es una hoja de estilos CSS en formato texto</li>
 					</ol>
 					<br>
-					<p><img src="img/hoja_interno1.png" alt=""></p>
+					<p>En este caso, en vez de escribir las reglas de estilo que se aplicarán a este documento HTML en la sección HEAD, las incluiremos en un fichero de texto que crearemos:</p>
 					<br>
-					<p class="text_center">Estructura de regla de estilo CSS</p>
+					<ol>
+						<li>El nombre del archivo (y su dirección) debe coincidir con el incluido en el atributo 'href' de la etiqueta <code>&lt;link&gt;</code>.</li>
+						<li>Debe guardarse con la extensión '<strong>.css</strong>', con codificación UTF-8 y en formato texto 'plano', como ocurría con las páginas HTML. No debemos usar Word o algún otro procesador que genera otro tipo de formatos.</li>
+						<li>En ese fichero <strong>no se incluyen</strong> las etiquetas <code>&lt;style&gt;</code><code>&lt;/style&gt;</code>como hacíamos en las hojas internas. Por lo demás, las reglas de estilo se escriben igual que en ese caso.</li>
+					</ol>
+					<p><img src="img/externo1.png" alt=""></p>
+					<br>
+					<p class="text_center">Contenido de la hoja de estilos CSS externa</p>
 					<br>
 					<p>Algunas aclaraciones adicionales:</p>
 					<ol>
-						<li>Hay propiedades a las que se le pueden asignar varios valores ya que realmente son un conjunto de propiedades en sí mismas. Por ejemplo 'margin' (margin) engloba a los márgenes de los 4 lados (arriba-derecha-abajo-izquierda). Cada uno de ellos es una propiedad en sí. Lo veremos después.</li>
-						<li>Explicaremos más adelante que es posible utilizar otro tipo de selectores, además de las etiquetas HTML, con los atributos 'id' y 'class'</li>
-						<li>En WordPress, veremos que hay editores visuales y themes (plantillas de diseño) que permiten incluir estilos de forma similar a esta, a nivel de página</li>
+						<li>La <strong>utilización de CSS externas</strong> confiere una serie de  <strong>beneficios:</strong> estructura mejor las páginas Web al separar el etiquetado HTML de los estilos CSS, permite reutilizar las hojas para distintas páginas y facilita el mantenimiento de un sitio web. Un ejemplo: podemos cambiar el tamaño del texto de todos los párrafos modificando simplemente el valor de esa propiedad (font-size) en el selector 'p' de la hoja de estilo, sin tener que cambiar en cada etiqueta <code>&lt;p&gt;</code> de cada página web.</li>
+						<li>En WordPress veremos que hay una nueva opción en su menú denominada "<strong>CSS Adicional</strong>". Esta opción junto a las '<strong>Custom CSS</strong>' (CSS personalizada), que incluyen ya muchos themes, actúan como una hoja CSS externa donde definimos reglas de estilo para toda nuestra web. No tiene tanta flexibilidad porque se aplican a todas las páginas (no se puede elegir en cuáles), pero en combinación con los estilos inline, y los estilos a nivel de página (que incluyen algunos themes), es suficiente para hacer todo lo que necesitemos a nivel de presentación.</li>
+						
 					</ol>
+				</div>
+				<div class="card">
+					<h1>Comentarios en CSS</h1>
+					<br>
+					<p>Al igual que en HTML, podemos incluir comentarios en nuestras hojas de estilo, tanto en las internas que hemos visto ahora, como en las externas que veremos a continuación.</p>
+					<br>
+					<p>Los comentarios son siempre recomendables para hacer luego más fácil la edición de los estilos en caso de que necesitemos cambiar algo con posterioridad. Nos pueden ayudar a recordar el motivo por el que dimos de alta una determinada regla, o en qué parte de nuestras páginas la utilizamos, o incluso el efecto que se consigue al aplicarla.</p>
+					<br>
+					<p>Los comentarios los incluiremos entre los caracteres /* (apertura) y */ (cierre), de esta forma: </p>
+					<p><pre class="cdv"><code><span class="ln"><span class="num" data-num="1."></span><span class="ln1"><span class="tag">/* aquí se escribe nuestro comentario...... */</span></span></span>
+						</code></pre>
+					</p>
+					<br>
+					<p>Ejemplo:</p>
+					<br>
+					<p><pre class="cdv"><code><span class="ln"><span class="num" data-num="1."></span><span class="ln1"><span class="tag"><code>&lt;style&gt;</code></span> {</span></span>
+							<span class="ln"><span class="num" data-num="2."></span><span class="ln2">   /* Introducimos este estilo en la página de contacto
+        para que los datos salieran más grandes y en otro color*/</span></span>
+							<span class="ln"><span class="num" data-num="3."></span><span class="ln1">   p.contacto {</span></span>
+							<span class="ln"><span class="num" data-num="4."></span><span class="ln1">   color: #008B8B;</span></span>
+							<span class="ln"><span class="num" data-num="5."></span><span class="ln1">   font-size: 1.2em;</span></span>
+							<span class="ln"><span class="num" data-num="5."></span><span class="ln1">   }</span></span>
+							<span class="ln"><span class="num" data-num="6."></span><span class="ln1"><span class="tag"><code>&lt;/style&gt;</code></span></span></span>
+						</code></pre></p>
 				</div>
 
 			</div>
