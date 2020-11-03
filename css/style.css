@@ -379,10 +379,7 @@ pre.cdv .tag {
   border-radius: 15px;
 }
 
-.card img{
-  width:15%;
-  height:15%;
-}
+
 
 /*conceptos*/
 .text{
@@ -422,3 +419,7 @@ pre.cdv .tag {
  .video{
   text-align:center;
  }
+.card img{
+  width:15%;
+  height:15%;
+}
