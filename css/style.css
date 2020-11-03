@@ -398,5 +398,27 @@ pre.cdv .tag {
 .text_center{
   text-align: center;
 }
+.coluna {overflow: hidden;}
+@media screen and (min-width: 50em) {
+  .coluna > div {
+    float: left;
+    width: 50%;
+  }
+}
+.ul { 
+  text-align: center;
+}
+ 
+ .recursos{
+  text-align: center;
 
-
+ }
+ #h2{
+ background-color: #50B748;
+    color: #fff;
+    margin: 0px;
+    padding: 20px;
+ }
+ .video{
+  text-align:center;
+ }

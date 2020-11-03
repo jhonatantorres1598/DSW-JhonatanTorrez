@@ -18,3 +18,15 @@ a{	color: #fff;
   padding: 10px;
   margin: 10px;
 }
+.coluna {overflow: hidden;}
+.coluna > div {background:#444}
+@media screen and (min-width: 40em) {
+  .coluna > div {
+    float: left;
+    width: 40%;
+  }
+}
+.login p , .lateral p, .login h2, .lateral h2 {
+  padding: 20px;
+  margin: 0;
+}
